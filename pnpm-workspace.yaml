@@ -1,4 +1,5 @@
-packages: []
+packages:
+  - website
 
 allowBuilds:
   esbuild: false
@@ -6,3 +7,4 @@ allowBuilds:
 trustPolicy: no-downgrade
 trustPolicyExclude:
   - chokidar@4.0.3
+  - vite@6.4.1
