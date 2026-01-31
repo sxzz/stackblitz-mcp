@@ -1,0 +1,22 @@
+{
+  "name": "@stackblitz-mcp/website",
+  "type": "module",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.17.1"
+  },
+  "devDependencies": {
+    "@iconify-json/lucide": "^1.2.87",
+    "@iconify-json/simple-icons": "^1.2.68",
+    "@unocss/astro": "^66.6.0",
+    "@unocss/reset": "^66.6.0",
+    "unocss": "^66.6.0"
+  }
+}
