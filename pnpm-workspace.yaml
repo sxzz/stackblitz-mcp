@@ -3,6 +3,7 @@ packages:
 
 allowBuilds:
   esbuild: false
+  sharp: false
 
 trustPolicy: no-downgrade
 trustPolicyExclude:
