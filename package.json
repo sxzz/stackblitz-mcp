@@ -51,7 +51,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.12.1",
-    "zod": "^3.25.23"
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@sxzz/eslint-config": "^7.5.1",
