@@ -92,9 +92,9 @@ Search for content within files of a StackBlitz project.
 
 ## Resources
 
-| URI Pattern | Description |
-|---|---|
-| `stackblitz://{projectId}/tree` | File tree of a project |
+| URI Pattern                             | Description                 |
+| --------------------------------------- | --------------------------- |
+| `stackblitz://{projectId}/tree`         | File tree of a project      |
 | `stackblitz://{projectId}/files/{path}` | Contents of a specific file |
 
 ## Sponsors

@@ -176,7 +176,9 @@ server.registerTool(
             type: 'text' as const,
             text: `File not found: ${path}${
               suggestions.length
-                ? `\n\nDid you mean:\n${suggestions.map((s) => `  - ${s}`).join('\n')}`
+                ? `\n\nDid you mean:\n${
+                  suggestions.map((s) => `  - ${s}`).join('\n')
+                }`
                 : ''
             }`,
           },
@@ -235,7 +237,9 @@ server.registerTool(
           content: [
             {
               type: 'text' as const,
-              text: `Invalid regex: ${error instanceof Error ? error.message : String(error)}`,
+              text: `Invalid regex: ${
+                error instanceof Error ? error.message : String(error)
+              }`,
             },
           ],
           isError: true,
@@ -294,7 +298,9 @@ server.registerTool(
       grouped.set(match.file, group)
     }
 
-    let output = `Found ${matches.length} match${matches.length === 1 ? '' : 'es'} in ${grouped.size} file${grouped.size === 1 ? '' : 's'}:\n\n`
+    let output = `Found ${matches.length} match${
+      matches.length === 1 ? '' : 'es'
+    } in ${grouped.size} file${grouped.size === 1 ? '' : 's'}:\n\n`
 
     for (const [file, fileMatches] of grouped) {
       output += `## ${file}\n`

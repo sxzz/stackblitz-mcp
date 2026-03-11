@@ -56,7 +56,9 @@ export async function fetchProject(
   }
 
   const response = await fetch(
-    `https://stackblitz.com/api/projects/${encodeURIComponent(projectId)}?include_files=true`,
+    `https://stackblitz.com/api/projects/${
+      encodeURIComponent(projectId)
+    }?include_files=true`,
   )
 
   if (!response.ok) {

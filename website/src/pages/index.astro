@@ -6,7 +6,7 @@ const clients = [
     docsUrl: 'https://modelcontextprotocol.io/quickstart/user',
     configPath: {
       mac: '~/Library/Application Support/Claude/claude_desktop_config.json',
-      win: '%APPDATA%\\Claude\\claude_desktop_config.json',
+      win: String.raw`%APPDATA%\Claude\claude_desktop_config.json`,
     },
     config: `{
   "mcpServers": {
@@ -77,7 +77,8 @@ const clients = [
     name: 'JetBrains IDEs',
     icon: 'i-simple-icons-jetbrains',
     docsUrl: 'https://www.jetbrains.com/help/ai-assistant/mcp.html',
-    note: 'Go to Settings > Tools > AI Assistant > Model Context Protocol (MCP), click Add, and configure a stdio server:',
+    note:
+      'Go to Settings > Tools > AI Assistant > Model Context Protocol (MCP), click Add, and configure a stdio server:',
     config: `{
   "command": "npx",
   "args": ["-y", "stackblitz-mcp"]
@@ -138,8 +139,7 @@ const tools = [
   },
   {
     name: 'search_files',
-    description:
-      'Search for content within files of a StackBlitz project.',
+    description: 'Search for content within files of a StackBlitz project.',
     params: [
       {
         name: 'projectRef',
@@ -202,21 +202,20 @@ const resources = [
     <div class="min-h-screen">
       <!-- Header -->
       <header class="border-b border-border/50">
-        <div
-          class="max-w-5xl mx-auto px-6 h-14 flex items-center justify-between"
-        >
+        <div class="mx-auto h-14 max-w-5xl flex items-center justify-between px-6">
           <a
             href="/"
-            class="flex items-center gap-2 text-white font-semibold text-sm tracking-tight"
+            class="flex items-center gap-2 text-sm text-white font-semibold tracking-tight"
           >
-            <span class="i-simple-icons-stackblitz text-lg text-blue-400"
+            <span
+              class="i-simple-icons-stackblitz text-lg text-blue-400"
             ></span>
             stackblitz-mcp
           </a>
           <div class="flex items-center gap-4">
             <a
               href="https://npmx.dev/stackblitz-mcp"
-              class="text-neutral-500 hover:text-neutral-300 transition-colors"
+              class="text-neutral-500 transition-colors hover:text-neutral-300"
               target="_blank"
               rel="noopener"
               aria-label="npm"
@@ -225,7 +224,7 @@ const resources = [
             </a>
             <a
               href="https://github.com/sxzz/stackblitz-mcp"
-              class="text-neutral-500 hover:text-neutral-300 transition-colors"
+              class="text-neutral-500 transition-colors hover:text-neutral-300"
               target="_blank"
               rel="noopener"
               aria-label="GitHub"
@@ -237,44 +236,37 @@ const resources = [
       </header>
 
       <!-- Hero -->
-      <section class="pt-24 pb-20 px-6">
-        <div class="max-w-3xl mx-auto text-center">
-          <h1
-            class="text-4xl sm:text-5xl font-bold tracking-tight text-white leading-tight"
-          >
+      <section class="px-6 pb-20 pt-24">
+        <div class="mx-auto max-w-3xl text-center">
+          <h1 class="text-4xl text-white font-bold leading-tight tracking-tight sm:text-5xl">
             Read <a
-              class="text-gradient hover:opacity-80 transition-opacity"
+              class="text-gradient transition-opacity hover:opacity-80"
               href="https://stackblitz.com"
               target="_blank"
-              rel="noopener">StackBlitz</a
-            > projects<br />from any AI assistant
+              rel="noopener"
+            >StackBlitz</a> projects<br />from any AI assistant
           </h1>
-          <p
-            class="mt-6 text-lg text-neutral-400 max-w-xl mx-auto leading-relaxed"
-          >
+          <p class="mx-auto mt-6 max-w-xl text-lg text-neutral-400 leading-relaxed">
             An <a
               href="https://modelcontextprotocol.io/"
               target="_blank"
               rel="noopener"
-              class="text-neutral-300 underline decoration-neutral-600 underline-offset-2 hover:decoration-neutral-400 transition-colors"
-              >MCP</a
-            > server that gives AI assistants read-only access to file contents
-            and project structure from StackBlitz reproductions. No
+              class="text-neutral-300 underline decoration-neutral-600 underline-offset-2 transition-colors hover:decoration-neutral-400"
+            >MCP</a> server that gives AI assistants read-only access to file
+            contents and project structure from StackBlitz reproductions. No
             authentication required.
           </p>
-          <div
-            class="mt-10 flex flex-col sm:flex-row items-center justify-center gap-3"
-          >
-            <div class="relative group">
+          <div class="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            <div class="group relative">
               <code
-                class="block bg-surface-2 border border-border rounded-lg px-5 py-3 font-mono text-sm text-neutral-300 select-all"
+                class="block select-all border border-border rounded-lg bg-surface-2 px-5 py-3 text-sm text-neutral-300 font-mono"
               >
                 npm i -g stackblitz-mcp
               </code>
             </div>
             <a
               href="#setup"
-              class="bg-white text-black font-medium text-sm px-5 py-3 rounded-lg hover:bg-neutral-200 transition-colors"
+              class="rounded-lg bg-white px-5 py-3 text-sm text-black font-medium transition-colors hover:bg-neutral-200"
             >
               Get started
             </a>
@@ -283,201 +275,189 @@ const resources = [
       </section>
 
       <!-- Setup / Configuration -->
-      <section id="setup" class="pb-20 px-6 scroll-mt-20">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-2xl font-bold text-white tracking-tight mb-3">
+      <section id="setup" class="scroll-mt-20 px-6 pb-20">
+        <div class="mx-auto max-w-4xl">
+          <h2 class="mb-3 text-2xl text-white font-bold tracking-tight">
             Setup
           </h2>
-          <p class="text-neutral-400 mb-10 max-w-2xl">
+          <p class="mb-10 max-w-2xl text-neutral-400">
             Add <code
-              class="text-neutral-300 bg-surface-2 px-1.5 py-0.5 rounded text-sm font-mono"
-              >stackblitz-mcp</code
-            > to your AI tool of choice. Pick your editor below.
+              class="rounded bg-surface-2 px-1.5 py-0.5 text-sm text-neutral-300 font-mono"
+            >stackblitz-mcp</code> to your AI tool of choice. Pick your editor
+            below.
           </p>
 
           <div class="space-y-6">
-            {
-              clients.map((client) => (
-                <div class="border border-border rounded-xl overflow-hidden bg-surface-1">
-                  <div class="px-5 py-4 flex items-center justify-between border-b border-border/50">
-                    <div class="flex items-center gap-3">
-                      <span
-                        class={`${client.icon} text-xl text-neutral-400`}
-                      />
-                      <h3 class="font-semibold text-white text-sm">
-                        {client.name}
-                      </h3>
-                    </div>
-                    <a
-                      href={client.docsUrl}
-                      target="_blank"
-                      rel="noopener"
-                      class="text-xs text-neutral-500 hover:text-neutral-300 transition-colors flex items-center gap-1"
-                    >
-                      Docs{' '}
-                      <span class="i-lucide-external-link text-[10px]" />
-                    </a>
+            {clients.map((client) => (
+              <div class="overflow-hidden border border-border rounded-xl bg-surface-1">
+                <div class="flex items-center justify-between border-b border-border/50 px-5 py-4">
+                  <div class="flex items-center gap-3">
+                    <span class={`${client.icon} text-xl text-neutral-400`} />
+                    <h3 class="text-sm text-white font-semibold">
+                      {client.name}
+                    </h3>
                   </div>
-                  <div class="px-5 py-4">
-                    {client.command && (
-                      <div>
-                        <p class="text-xs text-neutral-500 mb-2">
-                          Run in your terminal:
-                        </p>
-                        <pre class="bg-surface-2 border border-border rounded-lg px-4 py-3 overflow-x-auto"><code class="text-sm font-mono text-emerald-400">{client.command}</code></pre>
-                      </div>
-                    )}
-                    {client.configPath && (
-                      <div class="mb-3">
-                        <p class="text-xs text-neutral-500 mb-1.5">
-                          Config file location:
-                        </p>
-                        <div class="flex flex-wrap gap-2">
-                          {Object.entries(client.configPath).map(
-                            ([key, path]) => (
-                              <code class="text-xs font-mono bg-surface-2 border border-border px-2 py-1 rounded text-neutral-400">
-                                <span class="text-neutral-600">{key}:</span>{' '}
-                                {path}
-                              </code>
-                            ),
-                          )}
-                        </div>
-                      </div>
-                    )}
-                    {client.note && (
-                      <p class="text-xs text-neutral-500 mb-2">
-                        {client.note}
-                      </p>
-                    )}
-                    {client.config && (
-                      <pre class="bg-surface-2 border border-border rounded-lg px-4 py-3 overflow-x-auto"><code class="text-sm font-mono text-neutral-300">{client.config}</code></pre>
-                    )}
-                  </div>
+                  <a
+                    href={client.docsUrl}
+                    target="_blank"
+                    rel="noopener"
+                    class="flex items-center gap-1 text-xs text-neutral-500 transition-colors hover:text-neutral-300"
+                  >
+                    Docs{' '}
+                    <span class="i-lucide-external-link text-[10px]" />
+                  </a>
                 </div>
-              ))
-            }
+                <div class="px-5 py-4">
+                  {client.command && (
+                    <div>
+                      <p class="mb-2 text-xs text-neutral-500">
+                        Run in your terminal:
+                      </p>
+                      <pre class="overflow-x-auto border border-border rounded-lg bg-surface-2 px-4 py-3"><code class="text-sm text-emerald-400 font-mono">{client.command}</code></pre>
+                    </div>
+                  )}
+                  {client.configPath && (
+                    <div class="mb-3">
+                      <p class="mb-1.5 text-xs text-neutral-500">
+                        Config file location:
+                      </p>
+                      <div class="flex flex-wrap gap-2">
+                        {Object.entries(client.configPath).map(
+                          ([key, path]) => (
+                            <code
+                              class="border border-border rounded bg-surface-2 px-2 py-1 text-xs text-neutral-400 font-mono"
+                            >
+                              <span class="text-neutral-600">{key}:</span>{' '}
+                              {path}
+                            </code>
+                          ),
+                        )}
+                      </div>
+                    </div>
+                  )}
+                  {client.note && (
+                    <p class="mb-2 text-xs text-neutral-500">
+                      {client.note}
+                    </p>
+                  )}
+                  {client.config && (
+                    <pre class="overflow-x-auto border border-border rounded-lg bg-surface-2 px-4 py-3"><code class="text-sm text-neutral-300 font-mono">{client.config}</code></pre>
+                  )}
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       <!-- Tools -->
-      <section id="tools" class="pb-20 px-6">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-2xl font-bold text-white tracking-tight mb-3">
+      <section id="tools" class="px-6 pb-20">
+        <div class="mx-auto max-w-4xl">
+          <h2 class="mb-3 text-2xl text-white font-bold tracking-tight">
             Tools
           </h2>
-          <p class="text-neutral-400 mb-10 max-w-2xl">
+          <p class="mb-10 max-w-2xl text-neutral-400">
             Four read-only tools for exploring StackBlitz projects. Pass a
             project URL or ID to any of them.
           </p>
 
           <div class="grid gap-4">
-            {
-              tools.map((tool) => (
-                <div class="border border-border rounded-xl bg-surface-1 p-5">
-                  <div class="flex items-center gap-2 mb-2">
-                    <span class="i-lucide-wrench text-sm text-blue-400" />
-                    <h3 class="font-mono font-semibold text-white text-sm">
-                      {tool.name}
-                    </h3>
-                  </div>
-                  <p class="text-sm text-neutral-400 mb-4">
-                    {tool.description}
-                  </p>
-                  <div class="overflow-x-auto">
-                    <table class="w-full text-sm">
-                      <thead>
-                        <tr class="border-b border-border/50">
-                          <th class="text-left py-2 pr-4 text-neutral-500 font-medium text-xs uppercase tracking-wider">
-                            Parameter
-                          </th>
-                          <th class="text-left py-2 pr-4 text-neutral-500 font-medium text-xs uppercase tracking-wider">
-                            Type
-                          </th>
-                          <th class="text-left py-2 pr-4 text-neutral-500 font-medium text-xs uppercase tracking-wider w-16">
-                            Required
-                          </th>
-                          <th class="text-left py-2 text-neutral-500 font-medium text-xs uppercase tracking-wider">
-                            Description
-                          </th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {tool.params.map((param) => (
-                          <tr class="border-b border-border/30 last:border-0">
-                            <td class="py-2 pr-4 font-mono text-xs text-cyan-400">
-                              {param.name}
-                            </td>
-                            <td class="py-2 pr-4 font-mono text-xs text-neutral-500">
-                              {param.type}
-                            </td>
-                            <td class="py-2 pr-4 text-xs">
-                              {param.required ? (
-                                <span class="text-amber-400">yes</span>
-                              ) : (
-                                <span class="text-neutral-600">no</span>
-                              )}
-                            </td>
-                            <td class="py-2 text-xs text-neutral-400">
-                              {param.desc}
-                            </td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
+            {tools.map((tool) => (
+              <div class="border border-border rounded-xl bg-surface-1 p-5">
+                <div class="mb-2 flex items-center gap-2">
+                  <span class="i-lucide-wrench text-sm text-blue-400" />
+                  <h3 class="text-sm text-white font-semibold font-mono">
+                    {tool.name}
+                  </h3>
                 </div>
-              ))
-            }
+                <p class="mb-4 text-sm text-neutral-400">
+                  {tool.description}
+                </p>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-sm">
+                    <thead>
+                      <tr class="border-b border-border/50">
+                        <th class="py-2 pr-4 text-left text-xs text-neutral-500 font-medium tracking-wider uppercase">
+                          Parameter
+                        </th>
+                        <th class="py-2 pr-4 text-left text-xs text-neutral-500 font-medium tracking-wider uppercase">
+                          Type
+                        </th>
+                        <th class="w-16 py-2 pr-4 text-left text-xs text-neutral-500 font-medium tracking-wider uppercase">
+                          Required
+                        </th>
+                        <th class="py-2 text-left text-xs text-neutral-500 font-medium tracking-wider uppercase">
+                          Description
+                        </th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {tool.params.map((param) => (
+                        <tr class="border-b border-border/30 last:border-0">
+                          <td class="py-2 pr-4 text-xs text-cyan-400 font-mono">
+                            {param.name}
+                          </td>
+                          <td class="py-2 pr-4 text-xs text-neutral-500 font-mono">
+                            {param.type}
+                          </td>
+                          <td class="py-2 pr-4 text-xs">
+                            {param.required ? (
+                              <span class="text-amber-400">yes</span>
+                            ) : <span class="text-neutral-600">no</span>}
+                          </td>
+                          <td class="py-2 text-xs text-neutral-400">
+                            {param.desc}
+                          </td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
       <!-- Resources -->
-      <section id="resources" class="pb-20 px-6">
-        <div class="max-w-4xl mx-auto">
-          <h2 class="text-2xl font-bold text-white tracking-tight mb-3">
+      <section id="resources" class="px-6 pb-20">
+        <div class="mx-auto max-w-4xl">
+          <h2 class="mb-3 text-2xl text-white font-bold tracking-tight">
             Resources
           </h2>
-          <p class="text-neutral-400 mb-10 max-w-2xl">
+          <p class="mb-10 max-w-2xl text-neutral-400">
             MCP resources are accessible via URI patterns. Use them to directly
             reference project data.
           </p>
 
-          <div
-            class="border border-border rounded-xl bg-surface-1 overflow-hidden"
-          >
+          <div class="overflow-hidden border border-border rounded-xl bg-surface-1">
             <table class="w-full text-sm">
               <thead>
                 <tr class="border-b border-border/50">
-                  <th
-                    class="text-left px-5 py-3 text-neutral-500 font-medium text-xs uppercase tracking-wider"
-                    >URI Pattern</th
-                  >
-                  <th
-                    class="text-left px-5 py-3 text-neutral-500 font-medium text-xs uppercase tracking-wider"
-                    >Description</th
-                  >
+                  <th class="px-5 py-3 text-left text-xs text-neutral-500 font-medium tracking-wider uppercase">
+                    URI Pattern
+                  </th>
+                  <th class="px-5 py-3 text-left text-xs text-neutral-500 font-medium tracking-wider uppercase">
+                    Description
+                  </th>
                 </tr>
               </thead>
               <tbody>
-                {
-                  resources.map((res, i) => (
-                    <tr
-                      class:list={[
-                        'border-b border-border/30',
-                        i === resources.length - 1 && 'border-0',
-                      ]}
-                    >
-                      <td class="px-5 py-3 font-mono text-xs text-cyan-400">
-                        {res.uri}
-                      </td>
-                      <td class="px-5 py-3 text-xs text-neutral-400">
-                        {res.description}
-                      </td>
-                    </tr>
-                  ))
-                }
+                {resources.map((res, i) => (
+                  <tr
+                    class:list={[
+                      'border-b border-border/30',
+                      i === resources.length - 1 && 'border-0',
+                    ]}
+                  >
+                    <td class="px-5 py-3 text-xs text-cyan-400 font-mono">
+                      {res.uri}
+                    </td>
+                    <td class="px-5 py-3 text-xs text-neutral-400">
+                      {res.description}
+                    </td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
@@ -485,37 +465,35 @@ const resources = [
       </section>
 
       <!-- Footer -->
-      <footer class="border-t border-border/50 py-10 px-6">
-        <div
-          class="max-w-4xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-neutral-500"
-        >
+      <footer class="border-t border-border/50 px-6 py-10">
+        <div class="mx-auto max-w-4xl flex flex-col items-center justify-between gap-4 text-sm text-neutral-500 sm:flex-row">
           <div class="flex items-center gap-4">
             <a
               href="https://github.com/sxzz/stackblitz-mcp"
               target="_blank"
               rel="noopener"
-              class="hover:text-neutral-300 transition-colors">GitHub</a
-            >
+              class="transition-colors hover:text-neutral-300"
+            >GitHub</a>
             <a
               href="https://npmx.dev/stackblitz-mcp"
               target="_blank"
               rel="noopener"
-              class="hover:text-neutral-300 transition-colors">npm</a
-            >
+              class="transition-colors hover:text-neutral-300"
+            >npm</a>
             <a
               href="https://github.com/sxzz/stackblitz-mcp/issues"
               target="_blank"
               rel="noopener"
-              class="hover:text-neutral-300 transition-colors">Issues</a
-            >
+              class="transition-colors hover:text-neutral-300"
+            >Issues</a>
           </div>
           <div>
             MIT License &copy; <a
               href="https://github.com/sxzz"
               target="_blank"
               rel="noopener"
-              class="hover:text-neutral-300 transition-colors">Kevin Deng</a
-            >
+              class="transition-colors hover:text-neutral-300"
+            >Kevin Deng</a>
           </div>
         </div>
       </footer>
