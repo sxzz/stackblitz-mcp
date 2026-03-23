@@ -56,13 +56,13 @@
   "devDependencies": {
     "@sxzz/eslint-config": "^7.8.3",
     "@types/node": "^25.5.0",
-    "@typescript/native-preview": "7.0.0-dev.20260315.1",
-    "@unocss/eslint-plugin": "^66.6.6",
+    "@typescript/native-preview": "7.0.0-dev.20260322.1",
+    "@unocss/eslint-plugin": "^66.6.7",
     "bumpp": "^11.0.1",
     "dprint": "^0.53.0",
-    "eslint": "^10.0.3",
+    "eslint": "^10.1.0",
     "eslint-plugin-astro": "^1.6.0",
-    "tsdown": "^0.21.3",
+    "tsdown": "^0.21.4",
     "tsdown-preset-sxzz": "^0.4.2",
     "typescript": "^5.9.3",
     "vitest": "^4.1.0"
