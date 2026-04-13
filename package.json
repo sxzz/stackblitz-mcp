@@ -55,16 +55,16 @@
   },
   "devDependencies": {
     "@sxzz/eslint-config": "^7.8.4",
-    "@types/node": "^25.5.2",
-    "@typescript/native-preview": "7.0.0-dev.20260405.1",
-    "@unocss/eslint-plugin": "^66.6.7",
+    "@types/node": "^25.6.0",
+    "@typescript/native-preview": "7.0.0-dev.20260412.1",
+    "@unocss/eslint-plugin": "^66.6.8",
     "bumpp": "^11.0.1",
-    "dprint": "^0.53.2",
+    "dprint": "^0.54.0",
     "eslint": "^10.2.0",
-    "eslint-plugin-astro": "^1.6.0",
+    "eslint-plugin-astro": "^1.7.0",
     "tsdown": "^0.21.7",
     "tsdown-preset-sxzz": "^0.5.0",
     "typescript": "^6.0.2",
-    "vitest": "^4.1.2"
+    "vitest": "^4.1.4"
   }
 }
