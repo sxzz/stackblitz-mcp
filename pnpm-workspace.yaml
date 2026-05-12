@@ -2,6 +2,7 @@ packages:
   - website
 
 allowBuilds:
+  dprint: false
   esbuild: false
   sharp: false
 
