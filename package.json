@@ -2,7 +2,7 @@
   "name": "stackblitz-mcp",
   "type": "module",
   "version": "0.0.0",
-  "packageManager": "pnpm@11.1.2",
+  "packageManager": "pnpm@11.5.0",
   "description": "MCP server for reading files from StackBlitz projects",
   "author": "Kevin Deng <sxzz@sxzz.moe>",
   "license": "MIT",
@@ -56,7 +56,7 @@
   "devDependencies": {
     "@sxzz/eslint-config": "^8.1.0",
     "@types/node": "^25.7.0",
-    "@typescript/native-preview": "7.0.0-dev.20260517.1",
+    "@typescript/native-preview": "7.0.0-dev.20260527.2",
     "@unocss/eslint-plugin": "^66.6.8",
     "bumpp": "^11.1.0",
     "dprint": "^0.54.0",
