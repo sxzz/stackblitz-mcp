@@ -61,7 +61,7 @@
     "bumpp": "^11.1.0",
     "dprint": "^0.54.0",
     "eslint": "^10.3.0",
-    "eslint-plugin-astro": "^1.7.0",
+    "eslint-plugin-astro": "^2.0.0",
     "tsdown": "^0.22.0",
     "tsdown-preset-sxzz": "^0.6.0",
     "typescript": "^6.0.3",
