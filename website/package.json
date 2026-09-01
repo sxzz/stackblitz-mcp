@@ -10,13 +10,13 @@
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^7.0.0"
+    "astro": "^7.2.10"
   },
   "devDependencies": {
-    "@iconify-json/lucide": "^1.2.107",
-    "@iconify-json/simple-icons": "^1.2.82",
-    "@unocss/astro": "^66.6.8",
-    "@unocss/reset": "^66.6.8",
-    "unocss": "^66.6.8"
+    "@iconify-json/lucide": "^1.2.128",
+    "@iconify-json/simple-icons": "^1.2.94",
+    "@unocss/astro": "^66.9.1",
+    "@unocss/reset": "^66.9.1",
+    "unocss": "^66.9.1"
   }
 }
