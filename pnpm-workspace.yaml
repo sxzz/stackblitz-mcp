@@ -8,4 +8,3 @@ allowBuilds:
 minimumReleaseAge: 0
 trustPolicy: no-downgrade
 trustPolicyIgnoreAfter: 10080
-virtualStoreType: global

@@ -78,7 +78,7 @@ function formatNode(
   lines.push(`${prefix}${connector}${node.name}${suffix}`)
 
   if (node.children && node.children.length > 0) {
-    const childPrefix = prefix + (isLast ? '    ' : '│   ')
+    const childPrefix = prefix + (isLast ? ' '.repeat(4) : '│   ')
     const sorted = sortChildren(node.children)
     for (let i = 0; i < sorted.length; i++) {
       formatNode(sorted[i], childPrefix, i === sorted.length - 1, lines)
