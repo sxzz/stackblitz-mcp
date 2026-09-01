@@ -101,7 +101,7 @@ Search for content within files of a StackBlitz project.
 
 <p align="center">
   <a href="https://cdn.jsdelivr.net/gh/sxzz/sponsors/sponsors.svg">
-    <img src='https://cdn.jsdelivr.net/gh/sxzz/sponsors/sponsors.svg'/>
+    <img src='https://cdn.jsdelivr.net/gh/sxzz/sponsors/sponsors.svg' />
   </a>
 </p>
 
