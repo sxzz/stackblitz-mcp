@@ -2,7 +2,7 @@
   "name": "stackblitz-mcp",
   "type": "module",
   "version": "0.1.0",
-  "packageManager": "pnpm@12.4.1",
+  "packageManager": "pnpm@12.5.1",
   "description": "MCP server for reading files from StackBlitz projects",
   "author": "Kevin Deng <sxzz@sxzz.moe>",
   "license": "MIT",
